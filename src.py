@@ -2,13 +2,13 @@ from subprocess import call
 import os
 import time
 
-heart = """.......
-.##.##.
-#######
-.#####.
-..###..
-...#...
-......."""
+heart = """.##.##.
+#..#..#
+#.....#
+#.....#
+.#...#.
+..#.#..
+...#..."""
 
 def main():
     print(heart)
@@ -35,7 +35,7 @@ def main():
     os.chdir("/Users/sergey-mishin/dev/python/heart/")
     f = open("./tfile", "w")
 
-    initial_date = 1424581440
+    initial_date = 1390097040 + 60 * 60 * 24
     next_date = initial_date
 
     for week in targ:
@@ -47,7 +47,7 @@ def main():
                 nd_str = str(next_date)
                 # git commit --date="1424581440"
                 call(["./script.sh", nd_str])
-                time.sleep(2)
+                #time.sleep(2)
             next_date = next_date + 60*60*24
 
 
